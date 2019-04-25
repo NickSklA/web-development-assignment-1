@@ -4,6 +4,7 @@
         <title>Order Page</title>
 
         <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/order_style.css">
         <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
 
         <script src="/resources/js/script.js"></script>
@@ -18,15 +19,95 @@
         </div>
 
         <nav>
-            <img class="nav-logo" src="/resources/images/logo.png">
+            <a href="/index.html"><img class="nav-logo" src="/resources/images/logo.png"></a>
             <span class="nav-menu" onclick="openNav()">&#9776;</span>
         </nav>
 
-        <section>
-            
-            
+        <div class="container">
+            <div class="col">
+                <fieldset>
+                    <legend>Metals</legend>
+                    <input type="radio" id="metal" name="metal" value="iron" checked> Iron - 200 coins </br>
+                    <input type="radio" name="metal" value="gold"> Gold - 350 coins
+                </fieldset>
+                
+                </br>
 
-        </section>
+                <fieldset>
+                    <legend>House</legend>
+                    <input type="checkbox" id="house" name="house" value="Targaryen"> Targaryen - 15 coins </br>
+                    <input type="checkbox" name="house" value="Stark"> Stark - 25 coins </br>
+                    <input type="checkbox" name="house" value="Lannister"> Lannister - 30 coins </br>
+                    <input type="checkbox" name="house" value="Greyjoy"> Greyjoy - 35 coins
+                </fieldset>
+
+                </br>
+
+                <fieldset>
+                    <legend>Delivery options</legend>
+                    Quantity:
+                    <select name="quantity">
+                        <option value="1">1 Sword</option>
+                        <option value="2">2 Swords</option>
+                        <option value="3">3 Swords</option>
+                    </select> 
+                    </br>
+                    </br>
+                    <input type="checkbox" name="express" value="true"> Express delivery
+                </fieldset>
+
+                </br>
+        
+                <button>Generate random sword</button>
+            </div>
+
+            <div class="col">
+                <h2>Your sword</h2>
+                <img class="sword" src="/resources/images/iron-sword.png"> </br>
+                Shipping Charges: <input type="text" name="shippingCharges">  </br>
+                Total Cost: <input type="text" name="totalCost"> </br>
+                <button>Next</button>
+            </div>
+        </div>
+
+        <!-- <div class="content-wrapper">
+            <div class="content">
+                <form action="#" onSubmit="">
+                    <div class="left-column">
+                        <label for="metal">Metals</label></br>
+                        <input type="radio" id="metal" name="metal" value="iron" checked> Iron - 200 coins </br>
+                        <input type="radio" name="metal" value="gold"> Gold - 350 coins </br></br>
+        
+                        <label for="house">House</label></br>
+                        <input type="checkbox" id="house" name="house" value="Targaryen"> Targaryen - 15 coins </br>
+                        <input type="checkbox" name="house" value="Stark"> Stark - 25 coins </br>
+                        <input type="checkbox" name="house" value="Lannister"> Lannister - 30 coins </br>
+                        <input type="checkbox" name="house" value="Greyjoy"> Greyjoy - 35 coins </br> </br>
+    
+                        <input type="checkbox" name="express" value="true"> Express delivery </br> </br>
+    
+                        <select name="quantity">
+                            <option value="1">1 Sword</option>
+                            <option value="2">2 Swords</option>
+                            <option value="3">3 Swords</option>
+                        </select> 
+                        </br>
+        
+        
+                        <button>Generate random sword</button> </br>
+        
+                        <button>Next</button>
+                    </div>
+                    
+                    <div class="right-column">
+                        <img class="sword" src="/resources/images/iron-sword.png"> </br>
+                        Shipping Charges: <input type="text" name="shippingCharges">  </br>
+                        Total Cost: <input type="text" name="totalCost"> </br>
+                    </div>
+                </form>
+            </div>
+            
+        </div> -->
 
         <footer>
             <p>

@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    margin: 74px auto;
+    max-width: 1000px;
+    display: flex;
+    background-color: bisque;
+}
+
+.col {
+    flex: 50%;
+    padding: 10px;
+}
+
+.sword {
+    margin: 0;
+    display: block;
+    height: 250px; 
+    width: 250px;
+}
