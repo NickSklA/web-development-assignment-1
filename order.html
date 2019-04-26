@@ -9,7 +9,7 @@
 
         <script src="/resources/js/script.js"></script>
     </head>
-    <body>
+    <body onload="initValues()">
 
         <div id="sidenavId" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -27,18 +27,18 @@
             <div class="col">
                 <fieldset>
                     <legend>Metals</legend>
-                    <input type="radio" id="metal" name="metal" value="iron" checked> Iron - 200 coins </br>
-                    <input type="radio" name="metal" value="gold"> Gold - 350 coins
+                    <input type="radio" id="ironMetal" value="200" onclick="setMetal(this)" checked> Iron - 200 coins </br>
+                    <input type="radio" id="goldMetal" value="350" onclick="setMetal(this)"> Gold - 350 coins
                 </fieldset>
                 
                 </br>
 
                 <fieldset>
                     <legend>House</legend>
-                    <input type="checkbox" id="house" name="house" value="Targaryen"> Targaryen - 15 coins </br>
-                    <input type="checkbox" name="house" value="Stark"> Stark - 25 coins </br>
-                    <input type="checkbox" name="house" value="Lannister"> Lannister - 30 coins </br>
-                    <input type="checkbox" name="house" value="Greyjoy"> Greyjoy - 35 coins
+                    <input type="checkbox" value="15" onclick="setHouse(this)" id="targaryen"> Targaryen - 15 coins </br>
+                    <input type="checkbox" value="25" onclick="setHouse(this)" id="stark"> Stark - 25 coins </br>
+                    <input type="checkbox" value="30" onclick="setHouse(this)" id="lannister"> Lannister - 30 coins </br>
+                    <input type="checkbox" value="35" onclick="setHouse(this)" id="greyjoy"> Greyjoy - 35 coins
                 </fieldset>
 
                 </br>
@@ -46,14 +46,14 @@
                 <fieldset>
                     <legend>Delivery options</legend>
                     Quantity:
-                    <select name="quantity">
+                    <select id="quantity" onclick="setQuantity()">
                         <option value="1">1 Sword</option>
                         <option value="2">2 Swords</option>
                         <option value="3">3 Swords</option>
                     </select> 
                     </br>
                     </br>
-                    <input type="checkbox" name="express" value="true"> Express delivery
+                    <input type="checkbox" id="expressDelivery" onclick="setExpressDelivery()"> Express delivery
                 </fieldset>
 
                 </br>
@@ -64,50 +64,11 @@
             <div class="col">
                 <h2>Your sword</h2>
                 <img class="sword" src="/resources/images/iron-sword.png"> </br>
-                Shipping Charges: <input type="text" name="shippingCharges">  </br>
-                Total Cost: <input type="text" name="totalCost"> </br>
+                Shipping Charges: <input type="text" name="shippingCharges" value="0">  </br>
+                Total Cost: <input id="totalCost" type="text" name="totalCost" value="0"> </br>
                 <button>Next</button>
             </div>
         </div>
-
-        <!-- <div class="content-wrapper">
-            <div class="content">
-                <form action="#" onSubmit="">
-                    <div class="left-column">
-                        <label for="metal">Metals</label></br>
-                        <input type="radio" id="metal" name="metal" value="iron" checked> Iron - 200 coins </br>
-                        <input type="radio" name="metal" value="gold"> Gold - 350 coins </br></br>
-        
-                        <label for="house">House</label></br>
-                        <input type="checkbox" id="house" name="house" value="Targaryen"> Targaryen - 15 coins </br>
-                        <input type="checkbox" name="house" value="Stark"> Stark - 25 coins </br>
-                        <input type="checkbox" name="house" value="Lannister"> Lannister - 30 coins </br>
-                        <input type="checkbox" name="house" value="Greyjoy"> Greyjoy - 35 coins </br> </br>
-    
-                        <input type="checkbox" name="express" value="true"> Express delivery </br> </br>
-    
-                        <select name="quantity">
-                            <option value="1">1 Sword</option>
-                            <option value="2">2 Swords</option>
-                            <option value="3">3 Swords</option>
-                        </select> 
-                        </br>
-        
-        
-                        <button>Generate random sword</button> </br>
-        
-                        <button>Next</button>
-                    </div>
-                    
-                    <div class="right-column">
-                        <img class="sword" src="/resources/images/iron-sword.png"> </br>
-                        Shipping Charges: <input type="text" name="shippingCharges">  </br>
-                        Total Cost: <input type="text" name="totalCost"> </br>
-                    </div>
-                </form>
-            </div>
-            
-        </div> -->
 
         <footer>
             <p>
