@@ -4,6 +4,7 @@
     max-width: 1000px;
     display: flex;
     background-color: bisque;
+    border-radius: 4px;
 }
 
 .col {
@@ -11,9 +12,69 @@
     padding: 10px;
 }
 
-.sword {
+#second-step {
+    display: none;
+}
+
+table {
+    width: 100%;
+}
+
+.image-col {
+    width: 30%;
+}
+
+.description-col {
+    width: 70%;
+    vertical-align: top !important;
+}
+
+.alignRight {
+    float: right;
+}
+
+.button-cell {
+    width: 50%;
+}
+
+.card-field {
+    width: 25%;
+}
+.card-input {
+    width: 5ch;
+}
+
+.sword-image {
+    display: inline-block;
+    border: 1px rgba(0,0,0,0.1) solid;
+    border-radius: 8px;
+    z-index: 2;
+    position: relative;
     margin: 0;
-    display: block;
-    height: 250px; 
-    width: 250px;
+    height: 180px; 
+    width: 180px;
+    padding: 10px;
+}
+
+.sword-image .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: rgba(114,114,114,0.9);
+    color: #ffffff;
+}
+
+.sword {
+    width: inherit;
+}
+
+
+.priceInput {
+    background-color: transparent;
+    border: none;
+    text-align: right;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 19px;
 }

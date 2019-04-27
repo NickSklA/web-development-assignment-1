@@ -24,21 +24,21 @@
         </nav>
 
         <div class="container">
-            <div class="col">
+            <div class="col" id="first-step">
                 <fieldset>
                     <legend>Metals</legend>
-                    <input type="radio" id="ironMetal" value="200" onclick="setMetal(this)" checked> Iron - 200 coins </br>
-                    <input type="radio" id="goldMetal" value="350" onclick="setMetal(this)"> Gold - 350 coins
+                    <label><input type="radio" name="metal" id="ironMetal" value="200" onclick="setMetal(this)" checked> Iron - 200 coins</label> </br>
+                    <label><input type="radio" name="metal" id="goldMetal" value="350" onclick="setMetal(this)"> Gold - 350 coins</label>
                 </fieldset>
                 
                 </br>
 
                 <fieldset>
                     <legend>House</legend>
-                    <input type="checkbox" value="15" onclick="setHouse(this)" id="targaryen"> Targaryen - 15 coins </br>
-                    <input type="checkbox" value="25" onclick="setHouse(this)" id="stark"> Stark - 25 coins </br>
-                    <input type="checkbox" value="30" onclick="setHouse(this)" id="lannister"> Lannister - 30 coins </br>
-                    <input type="checkbox" value="35" onclick="setHouse(this)" id="greyjoy"> Greyjoy - 35 coins
+                    <label><input type="checkbox" name="house" value="15" onclick="setHouse(this)" id="targaryen" checked> Targaryen - 15 coins</label> </br>
+                    <label><input type="checkbox" name="house" value="25" onclick="setHouse(this)" id="stark"> Stark - 25 coins</label> </br>
+                    <label><input type="checkbox" name="house" value="30" onclick="setHouse(this)" id="lannister"> Lannister - 30 coins</label> </br>
+                    <label><input type="checkbox" name="house" value="35" onclick="setHouse(this)" id="greyjoy"> Greyjoy - 35 coins</label>
                 </fieldset>
 
                 </br>
@@ -53,20 +53,91 @@
                     </select> 
                     </br>
                     </br>
-                    <input type="checkbox" id="expressDelivery" onclick="setExpressDelivery()"> Express delivery
+                    <label><input type="checkbox" id="expressDelivery" onclick="setExpressDelivery()"> Express delivery</label>
                 </fieldset>
 
                 </br>
         
-                <button>Generate random sword</button>
+                <table>
+                    <tr>
+                        <td class="button-cell"><button onclick="generateRandomSword()">Generate random sword</button></td>
+                        <td class="button-cell"><button onclick="next()">Next</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col" id="second-step">
+                <h3>Checkout</h3>
+                <hr>
+                <fieldset>
+                    <legend>Card type</legend>
+                    <label><input type="radio" name="card" id="mastercard" checked> Mastercard</label> </br>
+                    <label><input type="radio" name="card" id="visa"> Visa</label>
+                </fieldset>
+                </br>
+
+                <label>Card number</label>
+                <table>
+                    <tr>
+                        <td class="card-field"><input class="card-input" type="text" maxlength="4"></td>
+                        <td class="card-field"><input class="card-input" type="text" maxlength="4"></td>
+                        <td class="card-field"><input class="card-input" type="text" maxlength="4"></td>
+                        <td class="card-field"><input class="card-input" type="text" maxlength="4"></td>
+                    </tr>
+                </table>
+
+                <label>First name</label> </br>
+                <input type="text" id="firstName"> </br>
+
+                <label>Last name</label> </br>
+                <input type="text" id="lastName"> </br>
+
+                <table>
+                    <tr>
+                        <td class="button-cell"><button onclick="back()">Back</button></td>
+                        <td class="button-cell"><button onclick="confirm()">Confirm</button></td>
+                    </tr>
+                </table>
             </div>
 
             <div class="col">
-                <h2>Your sword</h2>
-                <img class="sword" src="/resources/images/iron-sword.png"> </br>
-                Shipping Charges: <input type="text" name="shippingCharges" value="0">  </br>
-                Total Cost: <input id="totalCost" type="text" name="totalCost" value="0"> </br>
-                <button>Next</button>
+                <table>
+                    <tr>
+                        <td class="image-col">
+                            <div class="sword-image">
+                                <img id="swordImage" class="sword" src="/resources/images/iron-sword.png">
+                                <span id="badge" class="badge">3</span>
+                            </div>
+                        </td>
+                        <td class="description-col">
+                            <h5>Iron sword - House Targeryen</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                </br>
+                </br>
+                <hr>
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td class="alignRight"><input class="priceInput" id="subtotal" type="text" name="subtotal" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td class="alignRight"><input class="priceInput" id="shipping" type="text" name="shippingCharges" value="0"></td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr>
+                        <td>Total</td>
+                        <td class="alignRight"><input class="priceInput" id="totalCost" type="text" name="totalCost" value="0"></td>
+                    </tr>
+                </table>
             </div>
         </div>
 

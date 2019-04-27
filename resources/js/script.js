@@ -19,60 +19,118 @@ var quantity;
 
 var expressDelivery;
 
+var shipping;
+
+var subtotal;
+
+var totalCost;
+
 function initValues() {
     this.metal = document.getElementById('ironMetal');
-    this.house = null;
+    this.house = document.getElementById('targaryen');
     this.quantity = 1;
     this.expressDelivery = false;
-
-    this.logValues();
-}
-
-function logValues() {
-    console.log(this.metal);
-    
-    console.log(this.house);
-    
-    console.log(this.quantity);
-    
-    console.log(this.expressDelivery);
+    update();
 }
 
 function setMetal(metal) {
     this.metal = metal;
-    this.logValues();
+    update();
 }
 
 function setHouse(house) {
     this.house = house;
 
     var chechboxes = document.getElementsByName('house');
-
     for (i = 0; i < chechboxes.length; i++) {
         if (chechboxes[i].checked) {
             chechboxes[i].checked = false;
         }
     }
-
     document.getElementById(this.house.id).checked = true;
-    document.getElementById('totalCost').value = document.getElementById(this.house.id).value;
-    this.logValues();
+
+    update();
 }
 
 function setQuantity() {
     this.quantity = document.getElementById('quantity').value;
-    this.logValues();
+    update();
 }
 
 function setExpressDelivery() {
     this.expressDelivery = document.getElementById('expressDelivery').checked;
-    this.logValues();
+    update();
+}
+
+function setSubtotal() {
+    this.subtotal = ( parseInt(this.metal.value) + parseInt(this.house.value) ) * parseInt(quantity);
+}
+
+function setShipping() {
+    if (this.subtotal <= 225) {
+        this.shipping = 3;
+    }
+    else {
+        this.shipping = 2;
+    }
+
+    if (this.expressDelivery) {
+        this.shipping += 5;
+    }
 }
 
 function setTotalCost() {
-    var totalCostInput = document.getElementById('totalCost');
+    this.totalCost = this.subtotal + this.shipping;
 }
 
-function getTotalCost() {
-    return document.getElementsByName('metal')
+function setSwordImage() {
+    if (this.metal.id == 'ironMetal') {
+        document.getElementById('swordImage').src = '/resources/images/iron-sword.png';
+    }
+    else if (this.metal.id == 'goldMetal') {
+        document.getElementById('swordImage').src = '/resources/images/gold-sword.png';
+    }
+}
+
+function writeBadgeValue() {
+    document.getElementById('badge').innerHTML = this.quantity;
+}
+
+function writeCostValues() {
+    document.getElementById('subtotal').value = this.subtotal;
+    document.getElementById('shipping').value = this.shipping;
+    document.getElementById('totalCost').value = this.totalCost;
+}
+
+function update() {
+    setSubtotal();
+    setShipping();
+    setTotalCost();
+    setSwordImage();
+    writeBadgeValue();
+    writeCostValues();
+}
+
+function generateRandomSword() {
+    let randomMetal = Math.floor(Math.random() * 2);
+    let randomHouse = Math.floor(Math.random() * 4);
+
+    let metals = document.getElementsByName('metal');
+    metals[randomMetal].checked = true;
+    setMetal(metals[randomMetal]);
+
+    let houses = document.getElementsByName('house');
+    setHouse(houses[randomHouse]);
+}
+
+function back() {
+    document.getElementById('second-step').style.display = 'none';
+
+    document.getElementById('first-step').style.display = 'block';
+}
+
+function next() {
+    document.getElementById('first-step').style.display = 'none';
+    
+    document.getElementById('second-step').style.display = 'block';
 }
