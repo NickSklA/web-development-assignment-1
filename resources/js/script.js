@@ -26,7 +26,7 @@ var subtotal;
 var totalCost;
 
 function initValues() {
-    this.metal = document.getElementById('ironMetal');
+    this.metal = document.getElementById('iron');
     this.house = document.getElementById('targaryen');
     this.quantity = 1;
     this.expressDelivery = false;
@@ -84,12 +84,16 @@ function setTotalCost() {
 }
 
 function setSwordImage() {
-    if (this.metal.id == 'ironMetal') {
+    if (this.metal.id == 'iron') {
         document.getElementById('swordImage').src = '/resources/images/iron-sword.png';
     }
-    else if (this.metal.id == 'goldMetal') {
+    else if (this.metal.id == 'gold') {
         document.getElementById('swordImage').src = '/resources/images/gold-sword.png';
     }
+}
+
+function writeTitleDescription() {
+    document.getElementById('sword-title').innerHTML = this.metal.id + ' sword - house ' + this.house.id; 
 }
 
 function writeBadgeValue() {
@@ -107,6 +111,7 @@ function update() {
     setShipping();
     setTotalCost();
     setSwordImage();
+    writeTitleDescription();
     writeBadgeValue();
     writeCostValues();
 }
@@ -123,14 +128,26 @@ function generateRandomSword() {
     setHouse(houses[randomHouse]);
 }
 
+function isInputNumber(event) {
+
+    let char = String.fromCharCode(event.which);
+
+    if (!(/[0-9]/.test(char))) {
+        event.preventDefault();
+    }
+}
+
 function back() {
     document.getElementById('second-step').style.display = 'none';
-
     document.getElementById('first-step').style.display = 'block';
 }
 
 function next() {
     document.getElementById('first-step').style.display = 'none';
-    
     document.getElementById('second-step').style.display = 'block';
+}
+
+function confirm() {
+    alert('Your order has been completed successfully');
+    window.location.href = '/index.html';
 }

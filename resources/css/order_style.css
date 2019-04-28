@@ -40,8 +40,14 @@ table {
 .card-field {
     width: 25%;
 }
+
 .card-input {
-    width: 5ch;
+    width: 6ch;
+    box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
 }
 
 .sword-image {
@@ -70,11 +76,47 @@ table {
     width: inherit;
 }
 
-
 .priceInput {
     background-color: transparent;
     border: none;
     text-align: right;
     font-family: 'Cinzel Decorative', cursive;
     font-size: 19px;
+}
+
+.space {
+    margin-bottom: 80px;
+}
+
+.credit-card {
+    width: 50%;
+}
+
+.text-field {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+}
+
+.quantity-field {
+    box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+}
+
+.form-button {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
 }

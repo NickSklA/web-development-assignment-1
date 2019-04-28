@@ -27,8 +27,8 @@
             <div class="col" id="first-step">
                 <fieldset>
                     <legend>Metals</legend>
-                    <label><input type="radio" name="metal" id="ironMetal" value="200" onclick="setMetal(this)" checked> Iron - 200 coins</label> </br>
-                    <label><input type="radio" name="metal" id="goldMetal" value="350" onclick="setMetal(this)"> Gold - 350 coins</label>
+                    <label><input type="radio" name="metal" id="iron" value="200" onclick="setMetal(this)" checked> Iron - 200 coins</label> </br>
+                    <label><input type="radio" name="metal" id="gold" value="350" onclick="setMetal(this)"> Gold - 350 coins</label>
                 </fieldset>
                 
                 </br>
@@ -46,7 +46,7 @@
                 <fieldset>
                     <legend>Delivery options</legend>
                     Quantity:
-                    <select id="quantity" onclick="setQuantity()">
+                    <select class="quantity-field" id="quantity" onclick="setQuantity()">
                         <option value="1">1 Sword</option>
                         <option value="2">2 Swords</option>
                         <option value="3">3 Swords</option>
@@ -60,15 +60,15 @@
         
                 <table>
                     <tr>
-                        <td class="button-cell"><button onclick="generateRandomSword()">Generate random sword</button></td>
-                        <td class="button-cell"><button onclick="next()">Next</button></td>
+                        <td class="button-cell"><button class="form-button" onclick="generateRandomSword()">Generate random sword</button></td>
+                        <td class="button-cell"><button class="form-button" onclick="next()">Next</button></td>
                     </tr>
                 </table>
             </div>
 
             <div class="col" id="second-step">
                 <h3>Checkout</h3>
-                <hr>
+                
                 <fieldset>
                     <legend>Card type</legend>
                     <label><input type="radio" name="card" id="mastercard" checked> Mastercard</label> </br>
@@ -77,31 +77,31 @@
                 </br>
 
                 <label>Card number</label>
-                <table>
+                <table class="credit-card">
                     <tr>
-                        <td class="card-field"><input class="card-input" type="text" maxlength="4"></td>
-                        <td class="card-field"><input class="card-input" type="text" maxlength="4"></td>
-                        <td class="card-field"><input class="card-input" type="text" maxlength="4"></td>
-                        <td class="card-field"><input class="card-input" type="text" maxlength="4"></td>
+                        <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)"> -</td>
+                        <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)"> -</td>
+                        <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)"> -</td>
+                        <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)"></td>
                     </tr>
-                </table>
+                </table> </br>
 
                 <label>First name</label> </br>
-                <input type="text" id="firstName"> </br>
+                <input class="text-field" type="text" id="firstName"> </br> </br>
 
                 <label>Last name</label> </br>
-                <input type="text" id="lastName"> </br>
+                <input class="text-field" type="text" id="lastName"> </br> </br>
 
                 <table>
                     <tr>
-                        <td class="button-cell"><button onclick="back()">Back</button></td>
-                        <td class="button-cell"><button onclick="confirm()">Confirm</button></td>
+                        <td class="button-cell"><button class="form-button" onclick="back()">Back</button></td>
+                        <td class="button-cell"><button class="form-button" onclick="confirm()">Confirm</button></td>
                     </tr>
                 </table>
             </div>
 
             <div class="col">
-                <table>
+                <table class="space">
                     <tr>
                         <td class="image-col">
                             <div class="sword-image">
@@ -110,7 +110,7 @@
                             </div>
                         </td>
                         <td class="description-col">
-                            <h5>Iron sword - House Targeryen</h5>
+                            <h5 id="sword-title">Iron sword - House Targeryen</h5>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -118,8 +118,6 @@
                         </td>
                     </tr>
                 </table>
-                </br>
-                </br>
                 <hr>
                 <table>
                     <tr>
