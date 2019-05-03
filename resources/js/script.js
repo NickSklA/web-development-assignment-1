@@ -42,7 +42,7 @@ function setHouse(house) {
     this.house = house;
 
     var chechboxes = document.getElementsByName('house');
-    for (i = 0; i < chechboxes.length; i++) {
+    for (let i = 0; i < chechboxes.length; i++) {
         if (chechboxes[i].checked) {
             chechboxes[i].checked = false;
         }
@@ -92,6 +92,21 @@ function setSwordImage() {
     }
 }
 
+function setHouseImage() {
+    if (this.house.id == 'targaryen') {
+        document.getElementById('house-image').style.backgroundImage = "url('/resources/images/house-targaryen.png')";
+    }
+    else if (this.house.id == 'stark') {
+        document.getElementById('house-image').style.backgroundImage = "url('/resources/images/house-stark.png')";
+    }
+    else if (this.house.id == 'lannister') {
+        document.getElementById('house-image').style.backgroundImage = "url('/resources/images/house-lannister.png')";
+    }
+    else if (this.house.id == 'greyjoy') {
+        document.getElementById('house-image').style.backgroundImage = "url('/resources/images/house-greyjoy.jpg')";
+    }
+}
+
 function writeTitleDescription() {
     document.getElementById('sword-title').innerHTML = this.metal.id + ' sword - house ' + this.house.id; 
 }
@@ -111,6 +126,7 @@ function update() {
     setShipping();
     setTotalCost();
     setSwordImage();
+    setHouseImage();
     writeTitleDescription();
     writeBadgeValue();
     writeCostValues();

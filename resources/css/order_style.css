@@ -50,7 +50,9 @@ table {
     outline: none;
 }
 
-.sword-image {
+#house-image {
+    background-image: url(/resources/images/house-targaryen.png);
+    background-size: cover;
     display: inline-block;
     border: 1px rgba(0,0,0,0.1) solid;
     border-radius: 8px;
@@ -62,18 +64,19 @@ table {
     padding: 10px;
 }
 
-.sword-image .badge {
+#house-image .badge {
     position: absolute;
     top: -10px;
     right: -10px;
     padding: 5px 10px;
     border-radius: 50%;
-    background-color: rgba(114,114,114,0.9);
+    background-color: rgba(114,114,114,1);
     color: #ffffff;
 }
 
-.sword {
+.sword-image {
     width: inherit;
+    height: inherit;
 }
 
 .priceInput {
