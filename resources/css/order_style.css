@@ -1,3 +1,5 @@
+/* ----- Layout ----- */
+
 .container {
     position: relative;
     margin: 74px auto;
@@ -7,39 +9,56 @@
     border-radius: 4px;
 }
 
-.col {
-    flex: 50%;
-    padding: 10px;
-}
-
 .container-shadow {
     -webkit-box-shadow: 0px 15px 46px -4px rgba(0,0,0,0.47);
     -moz-box-shadow: 0px 15px 46px -4px rgba(0,0,0,0.47);
     box-shadow: 0px 15px 46px -4px rgba(0,0,0,0.47);    
 }
 
-#second-step {
-    display: none;
+.col {
+    flex: 50%;
+    padding: 10px;
 }
 
 table {
     width: 100%;
 }
 
-.image-col {
-    width: 30%;
-}
+/* ----- Buttons ----- */
 
-.description-col {
-    width: 70%;
-    vertical-align: top !important;
-}
-
-.alignRight {
-    float: right;
+.form-button {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
 }
 
 .button-cell {
+    width: 50%;
+}
+
+/* ----- First Step ----- */
+
+.quantity-field {
+    box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+}
+
+/* ----- Second Step ----- */
+
+#second-step {
+    display: none;
+}
+
+.credit-card {
     width: 50%;
 }
 
@@ -54,6 +73,26 @@ table {
     border-radius: 3px;
     padding: 5px;
     outline: none;
+}
+
+.text-field {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+}
+
+/* ----- Information Column ----- */
+
+.bottom-space {
+    margin-bottom: 95px;
+}
+
+.image-col {
+    vertical-align: top;
+    width: 30%;
 }
 
 #house-image {
@@ -85,6 +124,16 @@ table {
     height: inherit;
 }
 
+.description-col {
+    padding-left: 10px;
+    width: 70%;
+    vertical-align: top !important;
+}
+
+.description-col p {
+    font-size: 14px;
+}
+
 .priceInput {
     background-color: transparent;
     border: none;
@@ -93,39 +142,6 @@ table {
     font-size: 19px;
 }
 
-.space {
-    margin-bottom: 80px;
-}
-
-.credit-card {
-    width: 50%;
-}
-
-.text-field {
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #C2C2C2;
-    border-radius: 3px;
-    padding: 5px;
-    outline: none;
-}
-
-.quantity-field {
-    box-sizing: border-box;
-    border: 1px solid #C2C2C2;
-    border-radius: 3px;
-    padding: 5px;
-    outline: none;
-}
-
-.form-button {
-    width: 100%;
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    border-radius: 3px;
-    font-size: 16px;
-    padding: 10px;
-    cursor: pointer;
-    display: inline-block;
+.alignRight {
+    float: right;
 }
