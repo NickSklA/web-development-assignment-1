@@ -9,7 +9,7 @@ function closeNav() {
 }
 
 
-/* -------- Update Total Cost -------- */
+/* -------- Functionality & Logic Code -------- */
 
 var metal;
 
@@ -41,6 +41,7 @@ function setMetal(metal) {
 function setHouse(house) {
     this.house = house;
 
+    // keep only one checkbox selected
     var chechboxes = document.getElementsByName('house');
     for (let i = 0; i < chechboxes.length; i++) {
         if (chechboxes[i].checked) {
@@ -107,6 +108,21 @@ function setHouseImage() {
     }
 }
 
+function writeDescription() {
+    if (this.house.id == 'targaryen') {
+        document.getElementById('description-paragraph').innerHTML = "House Targaryen of Dragonstone is a Great House of Westeros and was the ruling royal House of the Seven Kingdoms for three centuries.";
+    }
+    else if (this.house.id == 'stark') {
+        document.getElementById('description-paragraph').innerHTML = "House Stark of Winterfell is a Great House of Westeros, ruling over the vast region known as the North from their seat in Winterfell.";
+    }
+    else if (this.house.id == 'lannister') {
+        document.getElementById('description-paragraph').innerHTML = "House Lannister of Casterly Rock is one of the Great Houses of Westeros, one of its richest and most powerful families and oldest dynasties.";
+    }
+    else if (this.house.id == 'greyjoy') {
+        document.getElementById('description-paragraph').innerHTML = "House Greyjoy of Pyke is one of the Great Houses of Westeros. It rules over the Iron Islands, a harsh and bleak collection of islands off the west coast of Westeros.";
+    }
+}
+
 function writeTitleDescription() {
     document.getElementById('sword-title').innerHTML = this.metal.id + ' sword - house ' + this.house.id; 
 }
@@ -127,6 +143,7 @@ function update() {
     setTotalCost();
     setSwordImage();
     setHouseImage();
+    writeDescription();
     writeTitleDescription();
     writeBadgeValue();
     writeCostValues();
@@ -145,7 +162,6 @@ function generateRandomSword() {
 }
 
 function isInputNumber(event) {
-
     let char = String.fromCharCode(event.which);
 
     if (!(/[0-9]/.test(char))) {
