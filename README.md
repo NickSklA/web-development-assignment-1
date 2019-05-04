@@ -1,2 +1,10 @@
-# game_of_thrones_site
-First exercise, Web development
+# Web Development first assignment
+
+A web app where you can build and order your sword.
+Select your metal, select your house and build your sword to fight for the throne.
+
+## Built With
+
+* HTML5
+* CSS3
+* JavaScript
