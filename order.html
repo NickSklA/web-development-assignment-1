@@ -69,35 +69,37 @@
             <div class="col" id="second-step">
                 <h3>Checkout</h3>
                 
-                <fieldset>
-                    <legend>Card type</legend>
-                    <label><input type="radio" name="card" id="mastercard" checked> Mastercard</label> </br>
-                    <label><input type="radio" name="card" id="visa"> Visa</label>
-                </fieldset>
-                </br>
-
-                <label>Card number</label>
-                <table class="credit-card">
-                    <tr>
-                        <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)"> -</td>
-                        <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)"> -</td>
-                        <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)"> -</td>
-                        <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)"></td>
-                    </tr>
-                </table> </br>
-
-                <label>First name</label> </br>
-                <input class="text-field" type="text" id="firstName"> </br> </br>
-
-                <label>Last name</label> </br>
-                <input class="text-field" type="text" id="lastName"> </br> </br>
-
-                <table>
-                    <tr>
-                        <td class="button-cell"><button class="form-button" onclick="back()">Back</button></td>
-                        <td class="button-cell"><button class="form-button" onclick="confirm()">Confirm</button></td>
-                    </tr>
-                </table>
+                <form action="index.html" onsubmit="return confirm()">
+                    <fieldset>
+                        <legend>Card type</legend>
+                        <label><input type="radio" name="card" id="mastercard" checked> Mastercard</label> </br>
+                        <label><input type="radio" name="card" id="visa"> Visa</label>
+                    </fieldset>
+                    </br>
+    
+                    <label>Card number</label>
+                    <table class="credit-card">
+                        <tr>
+                            <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)" minlength="4" required> -</td>
+                            <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)" minlength="4" required> -</td>
+                            <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)" minlength="4" required> -</td>
+                            <td class="card-field"><input class="card-input" type="text" maxlength="4" onkeypress="isInputNumber(event)" minlength="4" required></td>
+                        </tr>
+                    </table> </br>
+    
+                    <label>First name</label> </br>
+                    <input class="text-field" type="text" id="firstName" required> </br> </br>
+    
+                    <label>Last name</label> </br>
+                    <input class="text-field" type="text" id="lastName" required> </br> </br>
+    
+                    <table>
+                        <tr>
+                            <td class="button-cell"><button class="form-button" onclick="back()">Back</button></td>
+                            <td class="button-cell"><input class="form-button" type="submit"/></td>
+                        </tr>
+                    </table>
+                </form>
             </div>
 
             <div class="col">
