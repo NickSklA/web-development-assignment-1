@@ -3,13 +3,19 @@
     margin: 74px auto;
     max-width: 1000px;
     display: flex;
-    background-color: bisque;
+    background-color: #F7CB9D;
     border-radius: 4px;
 }
 
 .col {
     flex: 50%;
     padding: 10px;
+}
+
+.container-shadow {
+    -webkit-box-shadow: 0px 15px 46px -4px rgba(0,0,0,0.47);
+    -moz-box-shadow: 0px 15px 46px -4px rgba(0,0,0,0.47);
+    box-shadow: 0px 15px 46px -4px rgba(0,0,0,0.47);    
 }
 
 #second-step {
