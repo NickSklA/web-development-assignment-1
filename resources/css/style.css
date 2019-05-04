@@ -99,6 +99,7 @@ footer a {
 
 .button {
     background-color: #000000;
+    color: #ffffff;
     border: none;
     font-size: 1em;
     padding: 10px 32px;
@@ -106,25 +107,35 @@ footer a {
     display: inline-block;
 }
 
-.button a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
 .shadow {
     box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
 }
 
-/* ----- Animation ----- */
+/* ----- Animations ----- */
 
-.animation {
-    animation: fadeIn 2.5s;
+.animation-fadeInTop {
+    animation: fadeInTop 2.5s;
+}
+
+.animation-fadeIn {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 0, 0);
     }
     to {
         opacity: 1;
