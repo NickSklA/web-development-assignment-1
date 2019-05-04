@@ -96,7 +96,6 @@ table {
 }
 
 #house-image {
-    background-image: url(/resources/images/house-targaryen.png);
     background-size: cover;
     display: inline-block;
     border: 1px rgba(0,0,0,0.1) solid;

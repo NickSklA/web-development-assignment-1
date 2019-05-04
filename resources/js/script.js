@@ -86,25 +86,25 @@ function setTotalCost() {
 
 function setSwordImage() {
     if (this.metal.id == 'iron') {
-        document.getElementById('swordImage').src = '/resources/images/iron-sword.png';
+        document.getElementById('swordImage').src = 'resources/images/iron-sword.png';
     }
     else if (this.metal.id == 'gold') {
-        document.getElementById('swordImage').src = '/resources/images/gold-sword.png';
+        document.getElementById('swordImage').src = 'resources/images/gold-sword.png';
     }
 }
 
 function setHouseImage() {
     if (this.house.id == 'targaryen') {
-        document.getElementById('house-image').style.backgroundImage = "url('/resources/images/house-targaryen.png')";
+        document.getElementById('house-image').style.backgroundImage = "url('resources/images/house-targaryen.png')";
     }
     else if (this.house.id == 'stark') {
-        document.getElementById('house-image').style.backgroundImage = "url('/resources/images/house-stark.png')";
+        document.getElementById('house-image').style.backgroundImage = "url('resources/images/house-stark.png')";
     }
     else if (this.house.id == 'lannister') {
-        document.getElementById('house-image').style.backgroundImage = "url('/resources/images/house-lannister.png')";
+        document.getElementById('house-image').style.backgroundImage = "url('resources/images/house-lannister.png')";
     }
     else if (this.house.id == 'greyjoy') {
-        document.getElementById('house-image').style.backgroundImage = "url('/resources/images/house-greyjoy.jpg')";
+        document.getElementById('house-image').style.backgroundImage = "url('resources/images/house-greyjoy.jpg')";
     }
 }
 
